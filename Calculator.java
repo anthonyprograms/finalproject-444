@@ -70,7 +70,15 @@ public class Calculator
     }
 
     public static void div(Numbers nums) {
-        
+        double firstNum = nums.x * nums.u + nums.y * nums.v;
+        double firstDen = nums.u * nums.u + nums.v * nums.v;
+        double secondNum = nums.y * nums.u + nums.x + nums.v;
+        double secondDen = nums.u + nums.u + nums.v * nums.v;
+
+        double firstResult = firstNum / firstDen;
+        double secondResult = secondNum / secondDen;
+
+        System.out.printf("%.1f + %.1f i\n", firstResult, secondResult);
     }
 
     public static void mag(Numbers nums) {
@@ -79,6 +87,7 @@ public class Calculator
         System.out.printf("| ( %.1f + %.1f i ) | = %.1f\n", nums.x, nums.y, result);  
     }
 
+    // Fix arc tan
     public static void ang(Numbers nums) {
         double result = Math.atan(nums.y / nums.x);
         System.out.printf("ang (%.1f + %.1f) = %.1f\n", nums.x, nums.y, result); 
