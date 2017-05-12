@@ -1,25 +1,37 @@
 import java.util.*;
 import java.lang.*;
 
+/**
+ * 
+ */
 public class Calculator
 {
     public static void main(String[] args)
     {
-        showMenu();   
+        Scanner input = new Scanner(System.in);
+
+        int selection = showMenu(input);
+        handleSelection(input, selection);
     }
 
-    public static void showMenu() {
+    // Shows the starting menu for the complex number calculator
+    // Gives the user a number option menu for
+    // add, div, mag and ang
+    public static int showMenu(Scanner input) {
         System.out.println("Simple Complex Number Calculator");
         System.out.println("Select an Operation");
     
         int selection = 0;
-        Scanner input = new Scanner(System.in);
         
         while (selection < 1 || selection > 5) {
             System.out.println("1. add\n2. div\n3. mag\n4. ang\n5. Exit");
             selection = input.nextInt();
         }
 
+        return selection;
+    }
+
+    public static void handleSelection(Scanner input, int selection) {
         Numbers nums;
 
         switch (selection) {
