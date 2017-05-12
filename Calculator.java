@@ -80,6 +80,7 @@ public class Calculator
     }
 
     public static void ang(Numbers nums) {
-        
+        double result = Math.atan(nums.y / nums.x);
+        System.out.printf("ang (%.1f + %.1f) = %.1f\n", nums.x, nums.y, result); 
     }
 }
