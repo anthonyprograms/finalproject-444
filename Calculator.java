@@ -1,4 +1,5 @@
 import java.util.*;
+import java.lang.*;
 
 public class Calculator
 {
@@ -65,7 +66,7 @@ public class Calculator
         double first = nums.x + nums.u;
         double second = nums.y + nums.v;
 
-        System.out.printf("( %.2f + %.2f i ) + ( %.2f + %.2f i ) = %.2f + %.2f i\n", nums.x, nums.y, nums.u, nums.v, first, second);
+        System.out.printf("( %.1f + %.1f i ) + ( %.1f + %.1f i ) = %.1f + %.1f i\n", nums.x, nums.y, nums.u, nums.v, first, second);
     }
 
     public static void div(Numbers nums) {
@@ -73,7 +74,9 @@ public class Calculator
     }
 
     public static void mag(Numbers nums) {
-        
+        double result = Math.sqrt(nums.x * nums.x + nums.y * nums.y);   
+
+        System.out.printf("| ( %.1f + %.1f i ) | = %.1f\n", nums.x, nums.y, result);  
     }
 
     public static void ang(Numbers nums) {
