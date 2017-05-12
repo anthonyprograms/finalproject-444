@@ -72,7 +72,7 @@ public class Calculator
         double first = nums.x + nums.u;
         double second = nums.y + nums.v;
 
-        System.out.printf("( %.1f + %.1f i ) + ( %.1f + %.1f i ) = %.1f + %.1f i\n", nums.x, nums.y, nums.u, nums.v, first, second);
+        System.out.printf("(%.1f + %.1fi) + (%.1f + %.1fi) = %.1f + %.1fi\n", nums.x, nums.y, nums.u, nums.v, first, second);
     }
 
     public static void div(Numbers nums) {
@@ -84,18 +84,18 @@ public class Calculator
         double firstResult = firstNum / firstDen;
         double secondResult = secondNum / secondDen;
 
-        System.out.printf("%.1f + %.1f i\n", firstResult, secondResult);
+        System.out.printf("(%.1f + %.1fi) / (%.1f + %.1fi) = %.1f + %.1fi\n", nums.x, nums.y, nums.u, nums.v, firstResult, secondResult);
     }
 
     public static void mag(Numbers nums) {
         double result = Math.sqrt(nums.x * nums.x + nums.y * nums.y);   
 
-        System.out.printf("| ( %.1f + %.1f i ) | = %.1f\n", nums.x, nums.y, result);  
+        System.out.printf("| (%.1f + %.1fi) | = %.1f\n", nums.x, nums.y, result);  
     }
 
     // Fix arc tan
     public static void ang(Numbers nums) {
         double result = Math.atan(nums.y / nums.x);
-        System.out.printf("ang (%.1f + %.1f) = %.1f\n", nums.x, nums.y, result); 
+        System.out.printf("ang (%.1f + %.1fi) = %.1f\n", nums.x, nums.y, result); 
     }
 }
