@@ -2,6 +2,7 @@ import java.util.*;
 import java.lang.*;
 
 /**
+ * CECS 444 Spring 2017 Final Project
  * 
  */
 public class Calculator
@@ -19,7 +20,7 @@ public class Calculator
     // add, div, mag and ang
     public static int showMenu(Scanner input) {
         System.out.println("Simple Complex Number Calculator");
-        System.out.println("Select an Operation");
+        System.out.println("Select an Operation (the operation's corresponding number):");
     
         int selection = 0;
         
