@@ -62,7 +62,10 @@ public class Calculator
     }
 
     public static void add(Numbers nums) {
-         
+        double first = nums.x + nums.u;
+        double second = nums.y + nums.v;
+
+        System.out.printf("( %.2f + %.2f i ) + ( %.2f + %.2f i ) = %.2f + %.2f i\n", nums.x, nums.y, nums.u, nums.v, first, second);
     }
 
     public static void div(Numbers nums) {
