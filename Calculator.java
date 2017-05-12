@@ -23,16 +23,16 @@ public class Calculator
 
         switch (selection) {
             case 1:
-                add();
+                add(nums);
                 break;
             case 2:
-                div();
+                div(nums);
                 break;
             case 3:
-                mag();
+                mag(nums);
                 break;
             case 4:
-                ang();
+                ang(nums);
                 break;
             case 5:
                 System.out.println("Bye");
@@ -47,33 +47,33 @@ public class Calculator
         System.out.println("2nd Complex Number: u+vi");
 
         System.out.println("What is the value of x?");
-        nums.x = input.nextInt();
+        nums.x = input.nextDouble();
 
         System.out.println("What is the value of y?");
-        nums.y = input.nextInt();
+        nums.y = input.nextDouble();
 
         System.out.println("What is the value of u?");
-        nums.u = input.nextInt();
+        nums.u = input.nextDouble();
 
         System.out.println("What is the value of v?");
-        nums.v = input.nextInt();
+        nums.v = input.nextDouble();
 
         return nums;
     }
 
-    public static void add() {
+    public static void add(Numbers nums) {
          
     }
 
-    public static void div() {
+    public static void div(Numbers nums) {
         
     }
 
-    public static void mag() {
+    public static void mag(Numbers nums) {
         
     }
 
-    public static void ang() {
+    public static void ang(Numbers nums) {
         
     }
 }

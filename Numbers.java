@@ -1,4 +1,4 @@
 public class Numbers
 {
-    int x, y, u, v;
+    double x, y, u, v;
 }
