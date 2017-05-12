@@ -20,19 +20,23 @@ public class Calculator
             selection = input.nextInt();
         }
 
-        Numbers nums = getComplexValues(input);
+        Numbers nums;
 
         switch (selection) {
             case 1:
+                nums = getComplexValues(input, true);
                 add(nums);
                 break;
             case 2:
+                nums = getComplexValues(input, true);
                 div(nums);
                 break;
             case 3:
+                nums = getComplexValues(input, false);
                 mag(nums);
                 break;
             case 4:
+                nums = getComplexValues(input, false);
                 ang(nums);
                 break;
             case 5:
@@ -41,11 +45,10 @@ public class Calculator
         }
     }
 
-    public static Numbers getComplexValues(Scanner input) {
+    public static Numbers getComplexValues(Scanner input, Boolean needsTwo) {
         Numbers nums = new Numbers();
 
         System.out.println("1st Complex Number: x+yi");
-        System.out.println("2nd Complex Number: u+vi");
 
         System.out.println("What is the value of x?");
         nums.x = input.nextDouble();
@@ -53,11 +56,14 @@ public class Calculator
         System.out.println("What is the value of y?");
         nums.y = input.nextDouble();
 
-        System.out.println("What is the value of u?");
-        nums.u = input.nextDouble();
+        if (needsTwo) {
+            System.out.println("2nd Complex Number: u+vi");
+            System.out.println("What is the value of u?");
+            nums.u = input.nextDouble();
 
-        System.out.println("What is the value of v?");
-        nums.v = input.nextDouble();
+            System.out.println("What is the value of v?");
+            nums.v = input.nextDouble();
+        }
 
         return nums;
     }
