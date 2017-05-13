@@ -95,32 +95,65 @@ public class Calculator
         double first = nums.x + nums.u;
         double second = nums.y + nums.v;
 
-        System.out.printf("(%.1f + %.1fi) + (%.1f + %.1fi) = %.1f + %.1fi\n", nums.x, nums.y, nums.u, nums.v, first, second);
+        String firstStr;
+        String secondStr;
+        String thirdStr;
+        if(nums.y < 0)
+        	firstStr = "(" + nums.x + " - " + Math.abs(nums.y) + "i)";
+        else
+        	firstStr = "(" + nums.x + " + " + Math.abs(nums.y) + "i)";
+        if(nums.v < 0)
+        	secondStr = "(" + nums.u + " - " + Math.abs(nums.v) + "i)";
+        else
+        	secondStr = "(" + nums.u + " + " + Math.abs(nums.v) + "i)";
+        if(second < 0)
+        	thirdStr = "(" + first + " - " + Math.abs(second) + "i)";
+        else
+        	thirdStr = "(" + first + " + " + Math.abs(second) + "i)";
+        	System.out.printf(firstStr + " / "  + secondStr + " = " + thirdStr);
     }
 
     // Divides complex numbers
     public static void div(Numbers nums) {
         double firstNum = nums.x * nums.u + nums.y * nums.v;
         double firstDen = nums.u * nums.u + nums.v * nums.v;
-        double secondNum = nums.y * nums.u + nums.x + nums.v;
-        double secondDen = nums.u + nums.u + nums.v * nums.v;
+        double secondNum = nums.y * nums.u - nums.x * nums.v;
+        double secondDen = nums.u * nums.u + nums.v * nums.v;
 
         double firstResult = firstNum / firstDen;
         double secondResult = secondNum / secondDen;
-
-        System.out.printf("(%.1f + %.1fi) / (%.1f + %.1fi) = %.1f + %.1fi\n", nums.x, nums.y, nums.u, nums.v, firstResult, secondResult);
+        String firstStr;
+        String secondStr;
+        String thirdStr;
+        if(nums.y < 0)
+        	firstStr = "(" + nums.x + " - " + Math.abs(nums.y) + "i)";
+        else
+        	firstStr = "(" + nums.x + " + " + Math.abs(nums.y) + "i)";
+        if(nums.v < 0)
+        	secondStr = "(" + nums.u + " - " + Math.abs(nums.v) + "i)";
+        else
+        	secondStr = "(" + nums.u + " + " + Math.abs(nums.v) + "i)";
+        if(secondResult < 0)
+        	thirdStr = "(" + firstResult + " - " + Math.abs(secondResult) + "i)";
+        else
+        	thirdStr = "(" + firstResult + " + " + Math.abs(secondResult) + "i)";
+        	System.out.printf(firstStr + " / "  + secondStr + " = " + thirdStr);
     }
+    
 
     // Takes the magnitude of a complex number
     public static void mag(Numbers nums) {
         double result = Math.sqrt(nums.x * nums.x + nums.y * nums.y);   
-
-        System.out.printf("| (%.1f + %.1fi) | = %.1f\n", nums.x, nums.y, result);  
+        if(nums.y < 0)
+        	System.out.printf("| (%.1f - %.1fi) | = %.1f\n", nums.x, Math.abs(nums.y), result);  
+        else
+        	System.out.printf("| (%.1f + %.1fi) | = %.1f\n", nums.x, Math.abs(nums.y), result);  
+        	
     }
 
     // Gets the angle of a complex number
     public static void ang(Numbers nums) {
-        double result = Math.atan(nums.y / nums.x);
-        System.out.printf("ang (%.1f + %.1fi) = %.1f\n", nums.x, nums.y, result); 
+        double result = Math.atan(nums.y/ nums.x);
+        System.out.printf("ang (%.1f + %.1fi) = %.10f\n", nums.x, nums.y, result); 
     }
 }
