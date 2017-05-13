@@ -10,17 +10,21 @@ public class Calculator
 {
     public static void main(String[] args)
     {
-        Scanner input = new Scanner(System.in);
+        System.out.println("Simple Complex Number Calculator");
 
-        int selection = showMenu(input);
-        handleSelection(input, selection);
+        Scanner input = new Scanner(System.in);
+        int selection = 0;
+
+        while (selection != 5) {
+            selection = showMenu(input);
+            handleSelection(input, selection);
+        }
     }
 
     // Shows the starting menu for the complex number calculator
     // Gives the user a number option menu for
     // add, div, mag and ang
     public static int showMenu(Scanner input) {
-        System.out.println("Simple Complex Number Calculator");
         System.out.println("Select an Operation (the operation's corresponding number):");
     
         int selection = 0;
@@ -110,7 +114,7 @@ public class Calculator
         	thirdStr = "(" + first + " - " + Math.abs(second) + "i)";
         else
         	thirdStr = "(" + first + " + " + Math.abs(second) + "i)";
-        	System.out.printf(firstStr + " / "  + secondStr + " = " + thirdStr);
+        	System.out.printf(firstStr + " / "  + secondStr + " = " + thirdStr + "\n");
     }
 
     // Divides complex numbers
@@ -137,7 +141,7 @@ public class Calculator
         	thirdStr = "(" + firstResult + " - " + Math.abs(secondResult) + "i)";
         else
         	thirdStr = "(" + firstResult + " + " + Math.abs(secondResult) + "i)";
-        	System.out.printf(firstStr + " / "  + secondStr + " = " + thirdStr);
+        	System.out.printf(firstStr + " / "  + secondStr + " = " + thirdStr + "\n");
     }
     
 
