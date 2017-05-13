@@ -50,7 +50,10 @@ public class Calculator
                 break;
             case 2:
                 nums = getComplexValues(input, true);
-                div(nums);
+                if (nums.u == 0 && nums.v == 0)
+                	System.out.println("Error! Division by zero!");
+                else
+                	div(nums);
                 break;
             case 3:
                 nums = getComplexValues(input, false);
