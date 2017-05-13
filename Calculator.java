@@ -2,8 +2,9 @@ import java.util.*;
 import java.lang.*;
 
 /**
- * CECS 444 Spring 2017 Final Project
- * 
+ * CECS 444 Section 01
+ * Spring 2017 Final Project
+ * Anthony Williams, Luke Boncich, William Nguyen
  */
 public class Calculator
 {
